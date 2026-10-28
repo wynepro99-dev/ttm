@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT Talenta Teknik Mandiri | Mold &amp; Die, Precision Part, Fabrikasi</title>
+  <meta name="description" content="PT Talenta Teknik Mandiri membuat mold & die, precision part, fabrikasi, jig & fixture, dan special purpose machine untuk industri sejak 2012. Bengkel di Cikupa, Kabupaten Tangerang.">
+  <meta name="theme-color" content="#540405">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PT Talenta Teknik Mandiri">
+  <meta property="og:description" content="Mold & die, precision part, fabrikasi, dan special purpose machine untuk industri sejak 2012.">
+  <meta property="og:image" content="assets/img/cnc-spindle.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "PT Talenta Teknik Mandiri",
+      "url": "https://www.taltekmandiri.com",
+      "logo": "https://www.taltekmandiri.com/assets/img/logo.png",
+      "email": "talentateknikmandiri@gmail.com",
+      "telephone": "+62-812-8321-2599",
+      "foundingDate": "2012",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pergudangan Multi Guna Biz Point, Jl. Jakafta No. 86, Desa Suka Mulya",
+        "addressLocality": "Cikupa",
+        "addressRegion": "Kabupaten Tangerang, Banten",
+        "postalCode": "15710",
+        "addressCountry": "ID"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#tentang">Lewati ke konten</a>
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <img src="assets/img/logo-mark.png" width="187" height="187" alt="">
+      <div class="preloader__bar"><i></i></div>
+      <p>Memuat</p>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="PT Talenta Teknik Mandiri, ke atas">
+        <img src="assets/img/logo-mark.png" width="187" height="187" alt="">
+        <span>Talenta Teknik<br>Mandiri</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav__links">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#fasilitas">Fasilitas</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#klien">Klien</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm nav__cta" href="#kontak">Minta penawaran</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
+        <span class="nav__toggle-label">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <ul>
+      <li><a class="menu__link" href="#tentang">Tentang</a></li>
+      <li><a class="menu__link" href="#layanan">Layanan</a></li>
+      <li><a class="menu__link" href="#fasilitas">Fasilitas</a></li>
+      <li><a class="menu__link" href="#galeri">Galeri</a></li>
+      <li><a class="menu__link" href="#klien">Klien</a></li>
+      <li><a class="menu__link" href="#kontak">Kontak</a></li>
+    </ul>
+    <p class="menu__foot">
+      <a href="tel:+6281283212599">0812 8321 2599</a><br>
+      <a href="mailto:talentateknikmandiri@gmail.com">talentateknikmandiri@gmail.com</a>
+    </p>
+  </div>
+
+  <main>
+    <!-- Hero: die set 3D yang dirakit saat dimuat dan dibongkar saat di-scroll -->
+    <section class="hero" id="top">
+      <div class="hero__stage">
+        <canvas id="die-canvas" aria-hidden="true"></canvas>
+        <svg class="callout-lines" aria-hidden="true"></svg>
+        <div class="callouts" aria-hidden="true">
+          <div class="callout" data-key="shank"><span>Shank</span></div>
+          <div class="callout" data-key="bushing"><span>Bushing pemandu</span></div>
+          <div class="callout" data-key="upper"><span>Pelat atas</span></div>
+          <div class="callout" data-key="punch"><span>Punch</span></div>
+          <div class="callout" data-key="stripper"><span>Pelat stripper</span></div>
+          <div class="callout" data-key="die"><span>Die plate</span></div>
+          <div class="callout" data-key="post"><span>Tiang pemandu</span></div>
+          <div class="callout" data-key="lower"><span>Pelat bawah</span></div>
+        </div>
+      </div>
+
+      <div class="hero__copy">
+        <h1 class="h-display" data-split>Presisi dari pelat pertama sampai mesin jadi.</h1>
+        <p class="hero__lead">PT Talenta Teknik Mandiri membuat mold &amp; die, precision part, fabrikasi, dan special purpose machine untuk kebutuhan produksi pabrik Anda.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#kontak">Minta penawaran</a>
+          <a class="link-line" href="#galeri">Lihat galeri layanan</a>
+        </div>
+      </div>
+
+      <div class="hero__caption">
+        <h2>Di balik satu cetakan, ada banyak komponen yang harus pas.</h2>
+        <p>Pelat, tiang pemandu, bushing, dan punch kami kerjakan dengan mesin CNC, bubut, surface grinding, dan EDM di bengkel kami di Cikupa.</p>
+      </div>
+
+      <div class="hero__foot">
+        <p class="scroll-hint"><i aria-hidden="true"></i>Gulir untuk membongkar die set</p>
+        <p class="hero__meta">Cikupa, Kabupaten Tangerang<br>Berdiri sejak 2012</p>
+      </div>
+    </section>
+
+    <div class="band" aria-hidden="true">
+      <div class="band__track">
+        <div class="band__item">Mold &amp; die<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Precision part<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Fabrikasi<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Special purpose machine<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Jig &amp; fixture<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg></div>
+        <div class="band__item">Mold &amp; die<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Precision part<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Fabrikasi<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Special purpose machine<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg>Jig &amp; fixture<svg viewBox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><circle cx="12" cy="12" r="3.6"/></svg></div>
+      </div>
+    </div>
+
+    <!-- Tentang -->
+    <section class="about" id="tentang">
+      <div class="wrap about__grid">
+        <h2 class="h-sec" data-split>Bengkel rekayasa untuk kebutuhan produksi yang spesifik.</h2>
+        <div class="about__text">
+          <p class="lead">Berdiri sejak 2012, kami mengerjakan Special Purpose Machine, Molding/Dies, Fabrikasi, dan Precision Part dengan kualitas dan waktu pengerjaan yang efisien.</p>
+          <p>Selama <span data-years>14</span> tahun, pekerjaan kami ditangani tim yang berpengalaman di bidangnya dan didukung jaringan supplier serta sub-kontraktor yang luas. Dari satu komponen pengganti sampai mesin khusus untuk satu lini produksi, kami kerjakan dari gambar kerja Anda.</p>
+        </div>
+        <figure class="about__media frame">
+          <div class="reveal" data-reveal><img src="assets/img/cnc-spindle.jpg" width="1598" height="1010" alt="Spindle mesin CNC milling sedang memotong benda kerja" loading="lazy"></div>
+          <figcaption>Pemesinan CNC di bengkel</figcaption>
+        </figure>
+
+        <dl class="titleblock" aria-label="Data perusahaan">
+          <div><dt>Perusahaan</dt><dd>PT Talenta Teknik Mandiri</dd></div>
+          <div><dt>Berdiri</dt><dd>2012</dd></div>
+          <div><dt>Lokasi bengkel</dt><dd>Pergudangan Multi Guna Biz Point, Cikupa, Kab. Tangerang</dd></div>
+          <div><dt>Lingkup pekerjaan</dt><dd>Mold &amp; die, precision part, fabrikasi, jig &amp; fixture, special purpose machine</dd></div>
+          <div><dt>Legalitas</dt><dd>NPWP dan SPPKP (Pengusaha Kena Pajak)</dd></div>
+          <div><dt>Kontak</dt><dd><a href="tel:+6281283212599">0812 8321 2599</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Layanan -->
+    <section class="services slant" id="layanan" data-slant="r">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="h-sec" data-split>Apa yang kami kerjakan</h2>
+          <p>Pilih layanan untuk melihat contoh hasil kerjanya di galeri.</p>
+        </div>
+        <ul class="svc-list">
+          <li class="svc">
+            <a href="#g-lift" data-panel="g-lift">
+              <h3>Special purpose machine</h3>
+              <div>
+                <p>Mesin khusus yang dirancang mengikuti alur produksi Anda.</p>
+                <div class="svc__tags"><span class="tag">Lift barang</span><span class="tag">Bulk bag unloader</span></div>
+              </div>
+              <img class="svc__thumb" src="assets/img/galeri/bulkbag-1.jpg" width="205" height="277" alt="" loading="lazy">
+            </a>
+          </li>
+          <li class="svc">
+            <a href="#g-mold" data-panel="g-mold">
+              <h3>Molding / dies</h3>
+              <div>
+                <p>Dies dan cetakan untuk proses stamping maupun molding, dikerjakan sampai siap dipasang.</p>
+                <div class="svc__tags"><span class="tag">Dies progresif</span><span class="tag">Cetakan</span></div>
+              </div>
+              <img class="svc__thumb" src="assets/img/galeri/mold-1.jpg" width="419" height="317" alt="" loading="lazy">
+            </a>
+          </li>
+          <li class="svc">
+            <a href="#g-fab" data-panel="g-fab">
+              <h3>Fabrikasi</h3>
+              <div>
+                <p>Konstruksi baja dan perlengkapan pabrik, dari bengkel sampai pemasangan di lokasi.</p>
+                <div class="svc__tags"><span class="tag">Tangga &amp; platform</span><span class="tag">Conveyor</span><span class="tag">Rak</span></div>
+              </div>
+              <img class="svc__thumb" src="assets/img/galeri/fab-2.jpg" width="329" height="329" alt="" loading="lazy">
+            </a>
+          </li>
+          <li class="svc">
+            <a href="#g-jig" data-panel="g-jig">
+              <h3>Jig &amp; fixture</h3>
+              <div>
+                <p>Alat bantu pemegang dan pengecek benda kerja agar hasil produksi konsisten.</p>
+                <div class="svc__tags"><span class="tag">Welding fixture</span><span class="tag">Checking fixture</span></div>
+              </div>
+              <img class="svc__thumb" src="assets/img/galeri/jig-2.jpg" width="516" height="364" alt="" loading="lazy">
+            </a>
+          </li>
+          <li class="svc">
+            <a href="#g-part" data-panel="g-part">
+              <h3>Precision part</h3>
+              <div>
+                <p>Komponen bubut dan frais sesuai gambar kerja, berbahan baja, aluminium, atau kuningan.</p>
+                <div class="svc__tags"><span class="tag">Komponen bubut</span><span class="tag">Komponen frais</span></div>
+              </div>
+              <img class="svc__thumb" src="assets/img/galeri/part-1.jpg" width="350" height="215" alt="" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="svc-preview" aria-hidden="true">
+        <div class="svc-preview__inner">
+          <img src="assets/img/galeri/bulkbag-1.jpg" alt="">
+          <img src="assets/img/galeri/mold-1.jpg" alt="">
+          <img src="assets/img/galeri/fab-2.jpg" alt="">
+          <img src="assets/img/galeri/jig-2.jpg" alt="">
+          <img src="assets/img/galeri/part-1.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Fasilitas -->
+    <section class="facilities slant" id="fasilitas" data-slant="l">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="h-sec" data-split>Mesin di bengkel kami</h2>
+          <p>Pemesinan utama dikerjakan sendiri, sehingga ukuran dan jadwal lebih mudah dikendalikan.</p>
+        </div>
+        <div class="mgrid">
+          <article class="mcard mcard--half" data-tilt>
+            <div class="mcard__img"><img src="assets/img/mesin/cnc.png" width="540" height="138" alt="Mesin CNC milling dan CNC bubut" loading="lazy"></div>
+            <h3>CNC milling &amp; CNC bubut</h3>
+            <p>Untuk kontur dan bentuk kompleks yang harus sama persis di setiap benda kerja.</p>
+          </article>
+          <article class="mcard mcard--half" data-tilt>
+            <div class="mcard__img"><img src="assets/img/mesin/milling-manual.png" width="648" height="154" alt="Tiga unit mesin milling manual" loading="lazy"></div>
+            <h3>Milling manual</h3>
+            <p>Untuk frais, slot, dan pekerjaan perbaikan komponen.</p>
+          </article>
+          <article class="mcard" data-tilt>
+            <div class="mcard__img mcard__img--pair">
+              <img src="assets/img/mesin/bubut-manual.png" width="315" height="184" alt="Mesin bubut manual" loading="lazy">
+              <img src="assets/img/mesin/bubut-manual-2.png" width="315" height="178" alt="Mesin bubut manual kedua" loading="lazy">
+            </div>
+            <h3>Bubut manual</h3>
+            <p>Untuk poros, bushing, dan komponen silindris lainnya.</p>
+          </article>
+          <article class="mcard" data-tilt>
+            <div class="mcard__img"><img src="assets/img/mesin/surface-grinding.jpg" width="280" height="245" alt="Mesin surface grinding" loading="lazy"></div>
+            <h3>Surface grinding</h3>
+            <p>Untuk meratakan permukaan pelat dan blok hingga presisi.</p>
+          </article>
+          <article class="mcard" data-tilt>
+            <div class="mcard__img"><img src="assets/img/mesin/edm.jpg" width="335" height="345" alt="Mesin EDM" loading="lazy"></div>
+            <h3>EDM</h3>
+            <p>Untuk membentuk rongga dan detail pada baja yang sudah dikeraskan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri: scroll horizontal di desktop, geser di ponsel -->
+    <section class="gallery slant" id="galeri" data-slant="r">
+      <div class="gallery__pin">
+        <div class="wrap gallery__head">
+          <h2 class="h-sec" data-split>Galeri layanan kami</h2>
+          <p>Pilih foto untuk memperbesar.</p>
+          <div class="gallery__progress" aria-hidden="true"><i></i></div>
+        </div>
+        <div class="gallery__viewport">
+          <div class="gallery__track">
+            <section class="gpanel" id="g-lift" aria-labelledby="g-lift-t">
+              <header class="gpanel__head">
+                <h3 id="g-lift-t">Lift barang</h3>
+                <p>Lift untuk memindahkan material antar lantai gudang dan pabrik.</p>
+                <span class="gpanel__count">3 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure class="tall" data-cat="Lift barang"><button type="button" class="gfig"><img src="assets/img/galeri/lift-1.jpg" width="288" height="386" alt="Lift barang dengan pagar pengaman kuning" loading="lazy"></button></figure>
+                <figure class="tall" data-cat="Lift barang"><button type="button" class="gfig"><img src="assets/img/galeri/lift-2.jpg" width="280" height="376" alt="Lift barang rangka biru dengan pintu harmonika" loading="lazy"></button></figure>
+                <figure class="tall" data-cat="Lift barang"><button type="button" class="gfig"><img src="assets/img/galeri/lift-3.jpg" width="140" height="252" alt="Lift barang rangka hitam berpagar kawat" loading="lazy"></button></figure>
+              </div>
+            </section>
+
+            <section class="gpanel" id="g-bulk" aria-labelledby="g-bulk-t">
+              <header class="gpanel__head">
+                <h3 id="g-bulk-t">Bulk bag unloader</h3>
+                <p>Rangka pembongkar jumbo bag untuk mengalirkan material curah ke proses berikutnya.</p>
+                <span class="gpanel__count">3 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure class="tall" data-cat="Bulk bag unloader"><button type="button" class="gfig"><img src="assets/img/galeri/bulkbag-1.jpg" width="205" height="277" alt="Rangka bulk bag unloader warna biru" loading="lazy"></button></figure>
+                <figure class="tall" data-cat="Bulk bag unloader"><button type="button" class="gfig"><img src="assets/img/galeri/bulkbag-2.jpg" width="165" height="319" alt="Bulk bag unloader dengan hoist dan jumbo bag terpasang" loading="lazy"></button></figure>
+                <figure class="tall" data-cat="Bulk bag unloader"><button type="button" class="gfig"><img src="assets/img/galeri/bulkbag-3.jpg" width="281" height="448" alt="Bagian dalam bulk bag unloader yang terpasang di pabrik" loading="lazy"></button></figure>
+              </div>
+            </section>
+
+            <section class="gpanel" id="g-fab" aria-labelledby="g-fab-t">
+              <header class="gpanel__head">
+                <h3 id="g-fab-t">Fabrikasi</h3>
+                <p>Tangga dan platform grating, belt conveyor, roller conveyor, rak, dan konstruksi baja di lapangan.</p>
+                <span class="gpanel__count">6 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-1.jpg" width="302" height="255" alt="Tangga baja dengan anak tangga grating dan railing biru" loading="lazy"></button></figure>
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-2.jpg" width="329" height="329" alt="Dua unit belt conveyor" loading="lazy"></button></figure>
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-3.jpg" width="498" height="449" alt="Komponen konstruksi baja merah di lokasi proyek" loading="lazy"></button></figure>
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-4.jpg" width="320" height="240" alt="Roller conveyor" loading="lazy"></button></figure>
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-5.jpg" width="322" height="242" alt="Platform grating di sekeliling tangki" loading="lazy"></button></figure>
+                <figure data-cat="Fabrikasi"><button type="button" class="gfig"><img src="assets/img/galeri/fab-6.jpg" width="293" height="220" alt="Rak roller dari pipa" loading="lazy"></button></figure>
+              </div>
+            </section>
+
+            <section class="gpanel" id="g-mold" aria-labelledby="g-mold-t">
+              <header class="gpanel__head">
+                <h3 id="g-mold-t">Molding / dies</h3>
+                <p>Dies progresif dan cetakan, dari blok baja sampai siap produksi.</p>
+                <span class="gpanel__count">6 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-1.jpg" width="419" height="317" alt="Dies progresif di atas lantai bengkel" loading="lazy"></button></figure>
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-2.jpg" width="250" height="252" alt="Dies progresif dengan contoh hasil stamping" loading="lazy"></button></figure>
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-3.jpg" width="384" height="271" alt="Dua belahan cetakan logam" loading="lazy"></button></figure>
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-4.jpg" width="343" height="199" alt="Blok cetakan dengan tiang pemandu" loading="lazy"></button></figure>
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-5.jpg" width="300" height="228" alt="Die set terbuka di atas meja kerja" loading="lazy"></button></figure>
+                <figure data-cat="Molding / dies"><button type="button" class="gfig"><img src="assets/img/galeri/mold-6.jpg" width="260" height="194" alt="Detail rongga cetakan" loading="lazy"></button></figure>
+              </div>
+            </section>
+
+            <section class="gpanel" id="g-jig" aria-labelledby="g-jig-t">
+              <header class="gpanel__head">
+                <h3 id="g-jig-t">Jig &amp; fixture</h3>
+                <p>Fixture pemegang dan pengecek benda kerja untuk lini perakitan dan pengelasan.</p>
+                <span class="gpanel__count">5 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure class="tall" data-cat="Jig &amp; fixture"><button type="button" class="gfig"><img src="assets/img/galeri/jig-1.jpg" width="427" height="322" alt="Checking fixture dengan dudukan hijau dan klem merah" loading="lazy"></button></figure>
+                <figure data-cat="Jig &amp; fixture"><button type="button" class="gfig"><img src="assets/img/galeri/jig-2.jpg" width="516" height="364" alt="Deretan fixture rangka biru di lantai produksi" loading="lazy"></button></figure>
+                <figure data-cat="Jig &amp; fixture"><button type="button" class="gfig"><img src="assets/img/galeri/jig-3.jpg" width="400" height="227" alt="Fixture aluminium dengan klem toggle" loading="lazy"></button></figure>
+                <figure data-cat="Jig &amp; fixture"><button type="button" class="gfig"><img src="assets/img/galeri/jig-4.jpg" width="393" height="243" alt="Welding fixture kuning di atas meja berlubang" loading="lazy"></button></figure>
+                <figure data-cat="Jig &amp; fixture"><button type="button" class="gfig"><img src="assets/img/galeri/jig-5.jpg" width="393" height="243" alt="Welding fixture kuning dengan silinder pneumatik" loading="lazy"></button></figure>
+              </div>
+            </section>
+
+            <section class="gpanel" id="g-part" aria-labelledby="g-part-t">
+              <header class="gpanel__head">
+                <h3 id="g-part-t">Precision part</h3>
+                <p>Komponen bubut dan frais berbahan baja, aluminium, dan kuningan.</p>
+                <span class="gpanel__count">5 foto</span>
+              </header>
+              <div class="gpanel__grid">
+                <figure class="tall" data-cat="Precision part"><button type="button" class="gfig"><img src="assets/img/galeri/part-3.jpg" width="260" height="332" alt="Komponen presisi terpasang pada mesin" loading="lazy"></button></figure>
+                <figure data-cat="Precision part"><button type="button" class="gfig"><img src="assets/img/galeri/part-1.jpg" width="350" height="215" alt="Berbagai komponen bubut dari baja tahan karat" loading="lazy"></button></figure>
+                <figure data-cat="Precision part"><button type="button" class="gfig"><img src="assets/img/galeri/part-2.jpg" width="321" height="305" alt="Fitting dan komponen kuningan" loading="lazy"></button></figure>
+                <figure data-cat="Precision part"><button type="button" class="gfig"><img src="assets/img/galeri/part-4.jpg" width="252" height="255" alt="Komponen frais aluminium" loading="lazy"></button></figure>
+                <figure data-cat="Precision part"><button type="button" class="gfig"><img src="assets/img/galeri/part-5.jpg" width="436" height="254" alt="Pelat aluminium hasil frais CNC" loading="lazy"></button></figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi & misi -->
+    <section class="vision slant" id="visi" data-slant="l">
+      <div class="wrap">
+        <p class="vision__label">Visi kami</p>
+        <blockquote class="vision__quote" data-split="fill">Sukses itu hadiah yang selalu berusaha.</blockquote>
+        <h2 class="vision__label vision__label--mission">Misi kami</h2>
+        <ul class="mission">
+          <li>
+            <h3>Solusi rekayasa terbaik</h3>
+            <p>Memberikan solusi rekayasa teknik melalui pembuatan Special Purpose Machine, Molding/Dies, Fabrikasi, dan Precision Part yang inovatif dan efisien.</p>
+          </li>
+          <li>
+            <h3>Kualitas dan ketepatan waktu</h3>
+            <p>Menjaga komitmen pada kualitas, ketepatan waktu, dan kepuasan pelanggan sebagai wujud nyata semangat usaha berkelanjutan.</p>
+          </li>
+          <li>
+            <h3>Terus berinovasi</h3>
+            <p>Mengembangkan kemampuan teknis untuk menjawab tantangan industri dan kebutuhan pelanggan yang semakin kompleks.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Klien & legalitas -->
+    <section class="clients slant" id="klien" data-slant="r">
+      <div class="wrap clients__grid">
+        <div class="clients__intro">
+          <h2 class="h-sec" data-split>Dipercaya oleh</h2>
+          <p>Perusahaan manufaktur yang pernah bekerja sama dengan kami.</p>
+          <div class="legal">
+            <h3>Legalitas</h3>
+            <dl>
+              <div><dt>NPWP</dt><dd>Terdaftar di KPP Pratama Tangerang Timur</dd></div>
+              <div><dt>SPPKP</dt><dd>Dikukuhkan sebagai Pengusaha Kena Pajak</dd></div>
+            </dl>
+          </div>
+        </div>
+        <ul class="client-list">
+          <li class="client">PT Tirta Sukses Perkasa <span>Indofood Group</span></li>
+          <li class="client">PT Perfect Companion Indonesia Manufacturing</li>
+          <li class="client">PT Pasificfood Indonesia</li>
+          <li class="client">PT Braja Mukti Cakra</li>
+          <li class="client">PT Summit Adyawinsa Indonesia</li>
+          <li class="client">PT Great Giant Pineapple Tbk</li>
+          <li class="client">PT Green Power</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section class="contact slant" id="kontak" data-slant="l">
+      <div class="wrap contact__grid">
+        <div class="contact__info">
+          <h2 class="h-sec" data-split>Ceritakan kebutuhan produksi Anda.</h2>
+          <p class="lead">Kirim gambar kerja atau jelaskan kebutuhannya. Tim kami akan menghubungi Anda kembali.</p>
+          <dl class="cinfo">
+            <div><dt>Telepon &amp; WhatsApp</dt><dd><a href="tel:+6281283212599">0812 8321 2599</a> <a class="cinfo__wa" href="https://wa.me/6281283212599" target="_blank" rel="noopener">Chat WhatsApp</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:talentateknikmandiri@gmail.com">talentateknikmandiri@gmail.com</a></dd></div>
+            <div><dt>Bengkel</dt><dd>Pergudangan Multi Guna Biz Point, Jl. Jakafta No. 86, Desa Suka Mulya, Kec. Cikupa, Kab. Tangerang 15710<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Pergudangan+Multi+Guna+Biz+Point+Cikupa+Tangerang" target="_blank" rel="noopener">Buka di Google Maps</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="cform" novalidate>
+          <div class="cform__row">
+            <div class="field">
+              <label for="f-nama">Nama</label>
+              <input id="f-nama" name="nama" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-perusahaan">Perusahaan</label>
+              <input id="f-perusahaan" name="perusahaan" autocomplete="organization">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-kebutuhan">Jenis pekerjaan</label>
+            <select id="f-kebutuhan" name="kebutuhan" required>
+              <option value="">Pilih salah satu</option>
+              <option>Special purpose machine</option>
+              <option>Molding / dies</option>
+              <option>Fabrikasi</option>
+              <option>Jig &amp; fixture</option>
+              <option>Precision part</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-pesan">Detail kebutuhan</label>
+            <textarea id="f-pesan" name="pesan" rows="4" required placeholder="Contoh: 200 pcs bushing kuningan, diameter luar 30 mm, gambar kerja menyusul."></textarea>
+          </div>
+          <div class="cform__actions">
+            <button class="btn" type="submit" value="wa">Kirim lewat WhatsApp</button>
+            <button class="link-line" type="submit" value="email">Kirim lewat email</button>
+          </div>
+          <p class="cform__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/logo.png" width="187" height="214" alt="Logo PT Talenta Teknik Mandiri" loading="lazy">
+        <p>PT Talenta Teknik Mandiri<br><span>Mold &amp; die, precision part, fabrikasi, special purpose machine</span></p>
+      </div>
+      <ul class="footer__nav">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <p class="footer__copy">&copy; <span data-year>2026</span> PT Talenta Teknik Mandiri. Cikupa, Kabupaten Tangerang.</p>
+      <button class="footer__top link-line" type="button">Kembali ke atas</button>
+    </div>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Foto proyek" hidden>
+    <figure>
+      <img alt="">
+      <figcaption class="lightbox__cap"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__close" type="button" aria-label="Tutup foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__prev" type="button" aria-label="Foto sebelumnya">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__next" type="button" aria-label="Foto berikutnya">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="assets/js/scene.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
