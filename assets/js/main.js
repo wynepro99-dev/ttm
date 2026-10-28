@@ -450,8 +450,6 @@
         const py = (e.clientY - r.top) / r.height;
         ry((px - 0.5) * 9);
         rx((0.5 - py) * 9);
-        el.style.setProperty('--gx', `${px * 100}%`);
-        el.style.setProperty('--gy', `${py * 100}%`);
       });
       el.addEventListener('pointerleave', () => {
         rx(0);
@@ -466,7 +464,6 @@
     const lb = document.querySelector('.lightbox');
     if (!lb) return;
     const img = lb.querySelector('img');
-    const cap = lb.querySelector('.lightbox__cap');
     const closeBtn = lb.querySelector('.lightbox__close');
     const buttons = [...lb.querySelectorAll('button')];
     const figs = [...document.querySelectorAll('.gpanel__grid figure')];
@@ -481,7 +478,8 @@
       img.src = thumb.currentSrc || thumb.src;
       img.alt = thumb.alt;
       img.style.width = `${Math.min(thumb.naturalWidth * 1.8 || 600, window.innerWidth * 0.92)}px`;
-      cap.textContent = `${fig.dataset.cat}, foto ${siblings.indexOf(fig) + 1} dari ${siblings.length}. ${thumb.alt}.`;
+      // Tanpa keterangan yang terlihat; konteks foto tetap dibacakan untuk pembaca layar
+      lb.setAttribute('aria-label', `${fig.dataset.cat}, foto ${siblings.indexOf(fig) + 1} dari ${siblings.length}`);
     };
 
     const open = (i) => {

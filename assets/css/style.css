@@ -563,20 +563,17 @@ p { margin: 0 0 1em; }
   will-change: transform;
 }
 .mcard--half { grid-column: span 3; }
-.mcard__img { display: grid; place-items: center; height: clamp(150px, 15vw, 210px); margin-bottom: 1.3rem; }
-.mcard__img img { max-height: 100%; width: auto; object-fit: contain; }
-.mcard__img--pair { grid-template-columns: 1fr 1fr; gap: .5rem; }
+/* Foto mesin selalu muat di dalam kotaknya, tidak pernah menimpa judul dan teks */
+.mcard__img {
+  flex: none;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  height: clamp(150px, 15vw, 210px);
+  margin-bottom: 1.3rem;
+  overflow: hidden;
+}
+.mcard__img img { flex: 1 1 0; min-width: 0; width: 100%; height: 100%; object-fit: contain; }
 .mcard h3 { margin: auto 0 .45rem; font-stretch: 112%; font-weight: 750; font-size: 1.3rem; line-height: 1.15; letter-spacing: -.01em; }
 .mcard p { margin: 0; color: var(--muted-dark); font-size: .98rem; }
-.mcard::after {
-  content: "";
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgba(172, 7, 8, .07), transparent 60%);
-  opacity: 0;
-  transition: opacity .4s;
-}
-.mcard:hover::after { opacity: 1; }
 
 @media (max-width: 899px) {
   .mgrid { grid-template-columns: 1fr 1fr; }
@@ -796,7 +793,6 @@ p { margin: 0 0 1em; }
 .field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
 .field select option { color: var(--ink); }
 .field textarea { resize: vertical; min-height: 7rem; }
-.field ::placeholder { color: rgba(255, 255, 255, .38); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--signal-hi); box-shadow: 0 1px 0 var(--signal-hi); }
 .field [aria-invalid="true"] { border-bottom-color: #ff7a6e; }
 .cform__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin-top: .4rem; }
@@ -844,7 +840,6 @@ p { margin: 0 0 1em; }
 .lightbox[hidden] { display: none; }
 .lightbox figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .lightbox img { --c: 20px; max-width: 92vw; max-height: 76vh; width: auto; height: auto; object-fit: contain; clip-path: var(--chamfer); }
-.lightbox__cap { color: rgba(255, 255, 255, .75); font-size: .92rem; text-align: center; }
 .lightbox__btn {
   position: absolute;
   display: grid; place-items: center;
