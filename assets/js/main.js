@@ -330,7 +330,7 @@
     });
 
     gsap.from('.client', {
-      xPercent: 6, autoAlpha: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06,
+      y: 24, autoAlpha: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06,
       scrollTrigger: { trigger: '.client-list', start: 'top 85%', once: true },
     });
   }
